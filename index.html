@@ -1,0 +1,204 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<meta name="theme-color" content="#101827">
+<title>GoalCoin — Build better habits</title>
+<style>
+:root{--navy:#101827;--navy2:#182338;--panel:#1b2940;--muted:#93a4bd;--text:#f5f7fb;--gold:#f5c451;--mint:#7de0bd;--blue:#7da9ff;--line:#2b3b54;--danger:#ff8b8b;--radius:18px}
+*{box-sizing:border-box}body{margin:0;background:var(--navy);color:var(--text);font:15px/1.5 Inter,ui-sans-serif,system-ui,-apple-system,BlinkMacSystemFont,"Segoe UI",sans-serif}button,input,select,textarea{font:inherit}button{cursor:pointer;border:0}button:focus-visible,input:focus-visible,select:focus-visible,textarea:focus-visible{outline:2px solid var(--gold);outline-offset:2px}.app{display:grid;grid-template-columns:240px minmax(0,1fr);min-height:100vh}.sidebar{background:#0c1320;border-right:1px solid var(--line);padding:26px 16px;display:flex;flex-direction:column;gap:28px}.brand{display:flex;align-items:center;gap:10px;font-size:20px;font-weight:850;letter-spacing:-.7px;padding:0 10px}.brand-mark{background:var(--gold);color:#1a2230;width:34px;height:34px;border-radius:11px;display:grid;place-items:center;font-weight:900}.brand em{font-style:normal;color:var(--gold)}.nav{display:grid;gap:6px}.nav button{display:flex;gap:12px;align-items:center;text-align:left;background:transparent;color:var(--muted);padding:12px 14px;border-radius:12px}.nav button.active,.nav button:hover{background:var(--panel);color:var(--text)}.nav .ico{width:22px;text-align:center}.sidebar-note{margin-top:auto;border:1px solid var(--line);border-radius:15px;padding:15px;color:var(--muted);font-size:12px}.sidebar-note strong{display:block;color:var(--text);font-size:14px;margin-bottom:5px}.main{min-width:0;padding:30px clamp(18px,4vw,54px) 60px;max-width:1500px;width:100%;margin:auto}.topbar{display:flex;justify-content:space-between;align-items:center;gap:18px;margin-bottom:28px}.eyebrow{color:var(--gold);text-transform:uppercase;letter-spacing:1.7px;font-size:11px;font-weight:800}.topbar h1{font-size:clamp(25px,3vw,34px);letter-spacing:-1px;margin:5px 0 0}.date-label{color:var(--muted);font-size:13px}.avatar{width:42px;height:42px;border-radius:50%;display:grid;place-items:center;background:#31435f;color:var(--gold);font-weight:800}.top-right{display:flex;align-items:center;gap:12px}.view{display:none}.view.active{display:block}.hero{background:linear-gradient(115deg,#253754,#18263b 65%,#253149);border:1px solid #344966;border-radius:24px;padding:clamp(22px,3vw,34px);display:grid;grid-template-columns:1.4fr .6fr;gap:24px;align-items:center;position:relative;overflow:hidden}.hero:after{content:"";position:absolute;width:240px;height:240px;border-radius:50%;border:1px solid #ffffff12;right:-50px;top:-100px;box-shadow:0 0 0 28px #ffffff06,0 0 0 56px #ffffff04;pointer-events:none}.hero h2{font-size:clamp(24px,3vw,38px);line-height:1.12;letter-spacing:-1.2px;margin:10px 0 12px;max-width:540px}.hero p{color:#b8c5d8;max-width:560px;margin:0 0 20px}.btn{background:var(--gold);color:#1c2430;font-weight:800;border-radius:11px;padding:11px 16px;display:inline-flex;align-items:center;justify-content:center;gap:8px}.btn:hover{filter:brightness(1.06);transform:translateY(-1px)}.btn.secondary{background:#2b3d57;color:var(--text);border:1px solid #40536e}.btn.ghost{background:transparent;color:var(--muted);border:1px solid var(--line)}.btn.small{padding:8px 11px;font-size:12px}.hero-stats{position:relative;z-index:1;display:grid;gap:12px}.hero-stat{background:#1018279c;border:1px solid #ffffff16;border-radius:15px;padding:15px}.hero-stat span{display:block;color:#aebdd2;font-size:12px}.hero-stat strong{font-size:26px;letter-spacing:-.7px}.hero-stat small{color:var(--mint);margin-left:6px}.section-head{display:flex;justify-content:space-between;align-items:center;gap:12px;margin:30px 0 14px}.section-head h2{margin:0;font-size:19px;letter-spacing:-.4px}.section-head p{margin:3px 0 0;color:var(--muted);font-size:13px}.grid{display:grid;gap:15px}.wallet-grid{grid-template-columns:repeat(2,minmax(0,1fr))}.wallet{padding:21px;border-radius:18px;position:relative;overflow:hidden}.wallet.pc{background:linear-gradient(135deg,#203b39,#172d31);border:1px solid #315b53}.wallet.mc{background:linear-gradient(135deg,#293552,#202941);border:1px solid #3c4e75}.wallet-top{display:flex;justify-content:space-between;align-items:center}.coin-icon{width:40px;height:40px;border-radius:13px;display:grid;place-items:center;background:#ffffff12;font-size:20px}.wallet h3{margin:16px 0 1px;font-size:14px;color:#c6d3df}.wallet .balance{font-size:31px;font-weight:850;letter-spacing:-1px}.wallet .balance small{font-size:13px;letter-spacing:0;color:#b6c5d7}.wallet p{color:#b6c5d7;font-size:12px;margin:3px 0 15px}.wallet .wallet-bottom{display:flex;justify-content:space-between;align-items:center;gap:10px}.pill{border-radius:999px;padding:5px 9px;background:#ffffff12;color:#dbe5f2;font-size:11px;font-weight:700}.stat-grid{grid-template-columns:repeat(3,minmax(0,1fr))}.mini-stat,.card{background:var(--navy2);border:1px solid var(--line);border-radius:var(--radius);padding:19px}.mini-stat .mini-top{display:flex;justify-content:space-between;color:var(--muted);font-size:12px}.mini-stat strong{font-size:27px;display:block;margin-top:8px;letter-spacing:-.6px}.mini-stat small{color:var(--muted)}.mini-stat .mini-icon{font-size:18px}.content-grid{grid-template-columns:minmax(0,1.2fr) minmax(280px,.8fr)}.habit-list,.activity-list{display:grid;gap:10px}.habit{border:1px solid var(--line);border-radius:14px;padding:13px;display:flex;align-items:center;gap:12px;background:#172236}.habit-icon{width:40px;height:40px;border-radius:12px;background:#2b3b53;display:grid;place-items:center;font-size:19px;flex-shrink:0}.habit-main{min-width:0;flex:1}.habit-main strong{display:block;font-size:13px}.habit-main small{color:var(--muted);font-size:11px}.reward-tag{color:var(--gold);font-size:11px;font-weight:800;white-space:nowrap}.check-btn{background:#263952;color:var(--mint);border:1px solid #3b5b67;border-radius:10px;padding:8px 10px;font-size:12px;font-weight:800;white-space:nowrap}.check-btn:disabled{opacity:.55;cursor:default}.activity{display:flex;gap:11px;align-items:center;padding:10px 0;border-bottom:1px solid var(--line)}.activity:last-child{border-bottom:0}.activity .activity-icon{width:37px;height:37px;display:grid;place-items:center;border-radius:12px;background:#273750}.activity .activity-copy{flex:1;min-width:0}.activity strong{font-size:12px;display:block}.activity small{font-size:11px;color:var(--muted)}.activity .earned{color:var(--mint);font-weight:800;font-size:12px;white-space:nowrap}.empty{color:var(--muted);font-size:13px;padding:20px;text-align:center;border:1px dashed var(--line);border-radius:13px}.progress-track{height:7px;background:#2a3850;border-radius:99px;overflow:hidden;margin:10px 0 6px}.progress-fill{height:100%;background:var(--mint);border-radius:99px;width:0;transition:width .3s}.goal-card{display:flex;gap:13px;align-items:flex-start}.goal-card .habit-icon{background:#3a3048}.goal-info{flex:1;min-width:0}.goal-info strong{font-size:13px}.goal-info p{font-size:11px;color:var(--muted);margin:3px 0}.goal-info .goal-meta{display:flex;justify-content:space-between;gap:10px;color:var(--muted);font-size:11px}.filters{display:flex;gap:8px;flex-wrap:wrap}.filter{background:var(--navy2);border:1px solid var(--line);color:var(--muted);padding:8px 12px;border-radius:999px;font-size:12px}.filter.active{background:#33435b;color:var(--text);border-color:#61728c}.market-grid{grid-template-columns:repeat(3,minmax(0,1fr))}.product{display:flex;flex-direction:column;gap:10px}.product-art{height:112px;border-radius:14px;background:linear-gradient(135deg,#2b3d57,#1d2b42);display:grid;place-items:center;font-size:42px;position:relative}.product-art .product-type{position:absolute;top:9px;left:9px;font-size:10px;background:#111c2bd9;border-radius:999px;padding:4px 7px;color:#d8e3f3}.product h3{font-size:14px;margin:0}.product p{color:var(--muted);font-size:12px;margin:0;flex:1}.product-bottom{display:flex;justify-content:space-between;align-items:center;gap:8px;flex-wrap:wrap}.price{font-weight:850;color:var(--gold);font-size:13px}.page-intro{margin-bottom:20px}.page-intro h2{font-size:25px;margin:0 0 5px;letter-spacing:-.7px}.page-intro p{margin:0;color:var(--muted)}.form-grid{display:grid;grid-template-columns:repeat(2,minmax(0,1fr));gap:14px}.field{display:grid;gap:6px}.field.full{grid-column:1/-1}.field label{font-size:12px;color:#cbd6e4;font-weight:700}.field input,.field select,.field textarea{width:100%;background:#111b2b;color:var(--text);border:1px solid #34445d;border-radius:10px;padding:11px 12px;min-width:0}.field textarea{resize:vertical;min-height:76px}.form-actions{display:flex;gap:9px;justify-content:flex-end;margin-top:16px}.notice{background:#2d2a20;border:1px solid #62512d;color:#e8d6a8;border-radius:12px;padding:12px 14px;font-size:12px;margin-bottom:16px}.table-wrap{overflow:auto}.table{width:100%;border-collapse:collapse;font-size:12px}.table th,.table td{text-align:left;padding:13px 10px;border-bottom:1px solid var(--line);white-space:nowrap}.table th{color:var(--muted);font-weight:700}.table td:last-child{font-weight:800}.positive{color:var(--mint)}.negative{color:var(--danger)}.settings-row{display:flex;align-items:center;justify-content:space-between;gap:16px;padding:15px 0;border-bottom:1px solid var(--line)}.settings-row:last-child{border-bottom:0}.settings-row p{color:var(--muted);font-size:12px;margin:3px 0}.toast{position:fixed;right:20px;bottom:20px;background:#e4f8ed;color:#163d2b;border-radius:12px;padding:13px 18px;font-weight:750;box-shadow:0 12px 35px #0005;z-index:20;opacity:0;transform:translateY(10px);transition:.2s;pointer-events:none}.toast.show{opacity:1;transform:translateY(0)}.mobile-menu{display:none}.footer-note{font-size:11px;color:var(--muted);margin-top:25px}.modal-backdrop{position:fixed;inset:0;background:#050a12c9;display:none;align-items:center;justify-content:center;padding:20px;z-index:30}.modal-backdrop.open{display:flex}.modal{width:min(520px,100%);background:var(--navy2);border:1px solid var(--line);border-radius:20px;padding:24px;max-height:90vh;overflow:auto}.modal-head{display:flex;justify-content:space-between;gap:15px;align-items:center;margin-bottom:18px}.modal-head h2{margin:0;font-size:20px}.close{background:#2a3850;color:var(--text);border-radius:9px;width:34px;height:34px;font-size:20px}.hidden{display:none!important}
+@media(max-width:1000px){.app{grid-template-columns:205px minmax(0,1fr)}.market-grid{grid-template-columns:repeat(2,minmax(0,1fr))}.content-grid{grid-template-columns:1fr}.hero{grid-template-columns:1fr .55fr}}
+@media(max-width:700px){.app{display:block}.sidebar{position:fixed;z-index:25;inset:0 auto 0 0;width:260px;transform:translateX(-102%);transition:transform .25s;box-shadow:15px 0 50px #0005}.sidebar.open{transform:translateX(0)}.mobile-menu{display:inline-flex}.main{padding:20px 15px 45px}.topbar{margin-bottom:20px}.hero{grid-template-columns:1fr}.hero-stats{grid-template-columns:repeat(2,minmax(0,1fr))}.hero-stat strong{font-size:23px}.wallet-grid,.stat-grid{grid-template-columns:1fr 1fr}.stat-grid .mini-stat:last-child{grid-column:1/-1}.market-grid{grid-template-columns:repeat(2,minmax(0,1fr))}.section-head{margin-top:24px}.form-grid{grid-template-columns:1fr}.field.full{grid-column:auto}.date-label{display:none}}
+@media(max-width:410px){.wallet-grid,.market-grid{grid-template-columns:1fr}.hero-stats{grid-template-columns:1fr 1fr}.wallet .balance{font-size:27px}.product-art{height:95px}}
+</style>
+</head>
+<body>
+<div class="app">
+<aside class="sidebar" id="sidebar">
+  <div class="brand"><span class="brand-mark">G</span><span>Goal<em>Coin</em></span></div>
+  <nav class="nav" aria-label="Main navigation">
+    <button class="active" data-view="dashboard"><span class="ico">◫</span> Dashboard</button>
+    <button data-view="habits"><span class="ico">◎</span> My habits</button>
+    <button data-view="wallets"><span class="ico">◈</span> Wallets</button>
+    <button data-view="marketplace"><span class="ico">✧</span> Marketplace</button>
+    <button data-view="history"><span class="ico">↗</span> History</button>
+    <button data-view="settings"><span class="ico">⚙</span> Settings</button>
+  </nav>
+  <div class="sidebar-note"><strong>Small steps. Real progress.</strong>Build routines that last, one completed habit at a time.</div>
+</aside>
+<main class="main">
+<header class="topbar">
+  <div style="display:flex;align-items:center;gap:12px">
+    <button class="btn secondary mobile-menu" id="menuBtn" aria-label="Open menu">☰</button>
+    <div><div class="eyebrow">Your habit journey</div><h1 id="pageTitle">Good morning 👋</h1><div class="date-label" id="todayLabel"></div></div>
+  </div>
+  <div class="top-right"><button class="btn secondary small" id="quickAdd">＋ Add activity</button><div class="avatar" id="avatar">G</div></div>
+</header>
+<section class="view active" id="view-dashboard">
+  <div class="hero">
+    <div><div class="eyebrow">Progress over perfection</div><h2>Build better habits.<br>Earn your rewards.</h2><p>Every small action counts. Set goals, show up for yourself, and turn your progress into rewards you care about.</p><button class="btn" data-go="habits">Explore my habits <span>→</span></button></div>
+    <div class="hero-stats"><div class="hero-stat"><span>Habits completed today</span><strong id="heroDone">0</strong><small id="heroDoneSub">Keep going!</small></div><div class="hero-stat"><span>Current streak</span><strong id="heroStreak">0 days</strong><small>Consistency wins</small></div></div>
+  </div>
+  <div class="section-head"><div><h2>Your wallets</h2><p>Two ways to invest in yourself.</p></div><button class="btn ghost small" data-go="wallets">View wallets →</button></div>
+  <div class="grid wallet-grid" id="dashboardWallets"></div>
+  <div class="section-head"><div><h2>Your progress</h2><p>Little steps add up over time.</p></div></div>
+  <div class="grid stat-grid">
+    <div class="mini-stat"><div class="mini-top"><span>Weekly completions</span><span class="mini-icon">✓</span></div><strong id="weekDone">0</strong><small>Activities this week</small></div>
+    <div class="mini-stat"><div class="mini-top"><span>Rewards redeemed</span><span class="mini-icon">✧</span></div><strong id="rewardCount">0</strong><small>Moments to celebrate</small></div>
+    <div class="mini-stat"><div class="mini-top"><span>Active goals</span><span class="mini-icon">◎</span></div><strong id="activeGoals">0</strong><small>Habits in your plan</small></div>
+  </div>
+  <div class="grid content-grid">
+    <div><div class="section-head"><div><h2>Today's habits</h2><p>Show up for the person you want to become.</p></div><button class="btn ghost small" data-go="habits">See all</button></div><div class="habit-list" id="todayHabits"></div></div>
+    <div><div class="section-head"><div><h2>Recent activity</h2><p>Your effort, recorded.</p></div><button class="btn ghost small" data-go="history">View history</button></div><div class="card"><div id="recentActivity" class="activity-list"></div></div></div>
+  </div>
+</section>
+<section class="view" id="view-habits">
+  <div class="page-intro"><h2>My habits</h2><p>Choose meaningful goals and celebrate each completed step.</p></div>
+  <div class="grid content-grid">
+    <div class="card"><div class="section-head" style="margin-top:0"><div><h2>Your goals</h2><p>Track your progress one day at a time.</p></div><button class="btn small" id="newGoalBtn">＋ New goal</button></div><div class="habit-list" id="goalList"></div></div>
+    <div class="card"><div class="section-head" style="margin-top:0"><div><h2>Log an activity</h2><p>Record what you did and earn coins.</p></div></div>
+      <form id="activityForm"><div class="form-grid">
+        <div class="field full"><label for="activityName">Activity</label><input id="activityName" placeholder="e.g. Read for 20 minutes" required maxlength="90"></div>
+        <div class="field"><label for="activityType">Wallet</label><select id="activityType"><option value="PC">PC · Physical Coins</option><option value="MC">MC · Mind Coins</option></select></div>
+        <div class="field"><label for="activityCoins">Coins earned</label><input id="activityCoins" type="number" min="1" max="500" value="10" required></div>
+        <div class="field full"><label for="activityGoal">Link to a goal (optional)</label><select id="activityGoal"><option value="">No goal selected</option></select></div>
+        <div class="field full"><label for="activityNote">Note (optional)</label><textarea id="activityNote" placeholder="How did it feel? What did you learn?"></textarea></div>
+      </div><div class="form-actions"><button class="btn" type="submit">Save activity + coins</button></div></form>
+    </div>
+  </div>
+  <div class="section-head"><div><h2>Completed today</h2><p>Every effort counts.</p></div></div><div class="card"><div id="todayActivityFull" class="activity-list"></div></div>
+</section>
+<section class="view" id="view-wallets">
+  <div class="page-intro"><h2>Your wallets</h2><p>Physical and mental growth have separate balances.</p></div>
+  <div class="grid wallet-grid" id="fullWallets"></div>
+  <div class="section-head"><div><h2>How coins work</h2><p>Earn coins by logging your progress. Redeem them for rewards.</p></div></div>
+  <div class="grid wallet-grid"><div class="card"><div class="coin-icon">🏃</div><h3>PC · Physical Coins</h3><p style="color:var(--muted)">Earn PC from movement, workouts, sports, and other physical habits. Use PC for physical or activity-based rewards.</p></div><div class="card"><div class="coin-icon">📚</div><h3>MC · Mind Coins</h3><p style="color:var(--muted)">Earn MC from reading, studying, learning, and mindful routines. Use MC for learning, digital, and leisure rewards.</p></div></div>
+  <div class="section-head"><div><h2>Wallet transactions</h2><p>All earnings and spending in one place.</p></div></div><div class="card table-wrap"><table class="table"><thead><tr><th>Transaction</th><th>Wallet</th><th>Date</th><th>Amount</th></tr></thead><tbody id="walletTransactions"></tbody></table></div>
+</section>
+<section class="view" id="view-marketplace">
+  <div class="page-intro"><h2>Marketplace</h2><p>Turn the effort you put in into something you look forward to.</p></div>
+  <div class="notice">Demo marketplace: physical rewards are personal treats or extra leisure time that you choose to redeem for yourself. They are ideas only; GoalCoin does not provide products or payments.</div>
+  <div class="filters" id="marketFilters"><button class="filter active" data-filter="all">All rewards</button><button class="filter" data-filter="virtual">Virtual</button><button class="filter" data-filter="physical">Physical</button></div>
+  <div class="section-head"><div><h2>Rewards for your progress</h2><p>Spend the matching coin type to redeem.</p></div></div>
+  <div class="grid market-grid" id="marketGrid"></div>
+</section>
+<section class="view" id="view-history">
+  <div class="page-intro"><h2>History</h2><p>A reminder of how much you've already done.</p></div>
+  <div class="filters" id="historyFilters"><button class="filter active" data-hfilter="all">Everything</button><button class="filter" data-hfilter="earned">Coins earned</button><button class="filter" data-hfilter="spent">Rewards redeemed</button></div>
+  <div class="section-head"><div><h2>All transactions</h2><p>Your activity log and reward redemptions.</p></div></div><div class="card table-wrap"><table class="table"><thead><tr><th>Details</th><th>Type</th><th>Wallet</th><th>Date</th><th>Coins</th></tr></thead><tbody id="historyTable"></tbody></table></div>
+</section>
+<section class="view" id="view-settings">
+  <div class="page-intro"><h2>Settings</h2><p>Make GoalCoin feel like yours.</p></div>
+  <div class="card" style="max-width:720px"><form id="settingsForm"><div class="field"><label for="userName">Your name</label><input id="userName" maxlength="35" placeholder="What should we call you?"></div><div class="settings-row"><div><strong>Demo data</strong><p>Use this prototype without an account. Data stays in this browser on this device.</p></div><span class="pill">Local only</span></div><div class="settings-row"><div><strong>Reset demo</strong><p>Restore the original sample habits, balances, and activity.</p></div><button class="btn ghost small" type="button" id="resetBtn">Reset data</button></div><div class="form-actions"><button class="btn" type="submit">Save settings</button></div></form></div>
+  <p class="footer-note">GoalCoin is a habit-building prototype. Activity entries and coin amounts are self-reported demo data, not verified exercise or financial value.</p>
+</section>
+</main>
+</div>
+<div class="modal-backdrop" id="modalBackdrop" role="dialog" aria-modal="true" aria-labelledby="modalTitle"><div class="modal"><div class="modal-head"><h2 id="modalTitle">Create a goal</h2><button class="close" id="closeModal" aria-label="Close">×</button></div><form id="goalForm"><div class="form-grid">
+<div class="field full"><label for="goalName">Habit or goal</label><input id="goalName" required maxlength="80" placeholder="e.g. Read every day"></div>
+<div class="field"><label for="goalType">Category</label><select id="goalType"><option value="MC">Mental · MC</option><option value="PC">Physical · PC</option></select></div>
+<div class="field"><label for="goalFrequency">Target per week</label><select id="goalFrequency"><option value="1">1 time</option><option value="2">2 times</option><option value="3" selected>3 times</option><option value="4">4 times</option><option value="5">5 times</option><option value="6">6 times</option><option value="7">Every day</option></select></div>
+<div class="field"><label for="goalCoins">Coins per completion</label><input id="goalCoins" type="number" min="1" max="500" value="10" required></div>
+<div class="field"><label for="goalIcon">Icon</label><select id="goalIcon"><option>📚</option><option>🏃</option><option>💧</option><option>🧘</option><option>⚽</option><option>✍️</option><option>🎯</option><option>🌙</option><option>🚴</option><option>🎨</option></select></div>
+<div class="field full"><label for="goalDescription">Why does this matter to you? (optional)</label><textarea id="goalDescription" placeholder="Your reason helps you stay motivated."></textarea></div>
+</div><div class="form-actions"><button type="button" class="btn ghost" id="cancelGoal">Cancel</button><button class="btn" type="submit">Create goal</button></div></form></div></div>
+<div class="toast" id="toast" role="status" aria-live="polite"></div>
+<script>
+const STORE_KEY='goalcoin_prototype_v1';
+const today=()=>new Date().toISOString().slice(0,10);
+const dayLabel=(date)=>new Date(date+'T12:00:00').toLocaleDateString(undefined,{month:'short',day:'numeric',year:'numeric'});
+const seed=()=>({name:'Goal Setter',balances:{PC:80,MC:120},goals:[
+{id:1,name:'Move your body',type:'PC',frequency:4,coins:15,icon:'🏃',description:'Build energy and strength.',active:true},
+{id:2,name:'Read for 20 minutes',type:'MC',frequency:5,coins:10,icon:'📚',description:'Learn something new every day.',active:true},
+{id:3,name:'Drink enough water',type:'PC',frequency:7,coins:5,icon:'💧',description:'Take care of the basics.',active:true},
+{id:4,name:'Practice a skill',type:'MC',frequency:3,coins:12,icon:'✍️',description:'Small practice makes progress.',active:true}],
+transactions:[
+{id:1,name:'Morning walk',type:'earned',wallet:'PC',amount:15,date:today(),note:'Fresh air before the day.'},
+{id:2,name:'Read a chapter',type:'earned',wallet:'MC',amount:10,date:today(),note:''},
+{id:3,name:'Focus session',type:'earned',wallet:'MC',amount:10,date:today(),note:''}
+],redemptions:[],completions:[]});
+let state;try{state=JSON.parse(localStorage.getItem(STORE_KEY))||seed()}catch(e){state=seed()}
+let marketFilter='all',historyFilter='all';
+const rewards=[
+{id:'r1',name:'7-day streak badge',desc:'A little celebration for showing up consistently.',kind:'virtual',wallet:'MC',cost:25,icon:'🏅'},
+{id:'r2',name:'Focus theme',desc:'Unlock a new look for your personal dashboard.',kind:'virtual',wallet:'MC',cost:40,icon:'🎨'},
+{id:'r3',name:'Workout champion badge',desc:'Celebrate the effort you put into moving.',kind:'virtual',wallet:'PC',cost:30,icon:'🏆'},
+{id:'r4',name:'Ice cream break',desc:'Redeem this for one ice cream treat.',kind:'physical',wallet:'PC',cost:25,icon:'🍦'},
+{id:'r5',name:'Candy or chocolate',desc:'A small sweet treat, enjoyed in moderation.',kind:'physical',wallet:'PC',cost:15,icon:'🍫'},
+{id:'r6',name:'Fast-food treat',desc:'Enjoy one meal or snack from your favorite fast-food place.',kind:'physical',wallet:'PC',cost:60,icon:'🍔'},
+{id:'r7',name:'Favorite snack',desc:'Pick a snack you have been looking forward to.',kind:'physical',wallet:'PC',cost:30,icon:'🍿'},
+{id:'r8',name:'30 extra minutes of gaming',desc:'Enjoy 30 minutes of extra gaming time after your responsibilities are done.',kind:'physical',wallet:'MC',cost:35,icon:'🎮'},
+{id:'r9',name:'Movie night',desc:'Plan a movie night at home or at the cinema.',kind:'physical',wallet:'MC',cost:70,icon:'🎬'},
+{id:'r10',name:'One episode break',desc:'Enjoy one episode of a show you like.',kind:'physical',wallet:'MC',cost:25,icon:'📺'},
+{id:'r11',name:'Choose the family movie',desc:'Get to choose the next movie for a shared movie night.',kind:'physical',wallet:'MC',cost:30,icon:'🍿'},
+{id:'r12',name:'Extra hobby time',desc:'Spend 30 minutes on a hobby you enjoy.',kind:'physical',wallet:'MC',cost:30,icon:'🎨'},
+{id:'r13',name:'7-day learning streak',desc:'Celebrate your consistency with a virtual badge.',kind:'virtual',wallet:'MC',cost:25,icon:'🧠'},
+{id:'r14',name:'Personal best badge',desc:'Celebrate a new physical activity milestone.',kind:'virtual',wallet:'PC',cost:35,icon:'🥇'}
+];
+function save(){localStorage.setItem(STORE_KEY,JSON.stringify(state))}
+function esc(s){return String(s??'').replace(/[&<>"']/g,c=>({'&':'&amp;','<':'&lt;','>':'&gt;','"':'&quot;',"'":'&#39;'}[c]))}
+function toast(msg){const t=document.getElementById('toast');t.textContent=msg;t.classList.add('show');clearTimeout(toast.timer);toast.timer=setTimeout(()=>t.classList.remove('show'),2600)}
+function coin(wallet,n){return `${wallet==='PC'?'🟢':'🔵'} ${wallet} · ${n} coins`}
+function completedToday(goalId){return state.completions.filter(c=>c.goalId===goalId&&c.date===today()).length}
+function goalCountThisWeek(goalId){const d=new Date();const start=new Date(d);start.setDate(d.getDate()-((d.getDay()+6)%7));start.setHours(0,0,0,0);return state.completions.filter(c=>c.goalId===goalId&&new Date(c.date+'T12:00:00')>=start).length}
+function earnedTodayCount(){return state.transactions.filter(t=>t.type==='earned'&&t.date===today()).length}
+function streak(){let count=0,d=new Date();for(let i=0;i<365;i++){let key=d.toISOString().slice(0,10);if(state.completions.some(c=>c.date===key)||state.transactions.some(t=>t.type==='earned'&&t.date===key)){count++;d.setDate(d.getDate()-1)}else if(i===0){d.setDate(d.getDate()-1)}else break}return count}
+function walletCard(type){const pc=type==='PC';return `<div class="wallet ${type.toLowerCase()}"><div class="wallet-top"><div class="coin-icon">${pc?'🏃':'📚'}</div><span class="pill">${pc?'PHYSICAL':'MENTAL'}</span></div><h3>${pc?'Physical Coins':'Mind Coins'}</h3><div class="balance">${state.balances[type]} <small>${type}</small></div><p>${pc?'Earned through movement and physical habits.':'Earned through learning and mental habits.'}</p><div class="wallet-bottom"><span class="pill">${pc?'Movement':'Learning'} wallet</span><button class="btn secondary small" data-go="marketplace">Use coins →</button></div></div>`}
+function activityHTML(t){let icon=t.type==='spent'?'🎁':(t.wallet==='PC'?'🏃':'📚');return `<div class="activity"><div class="activity-icon">${icon}</div><div class="activity-copy"><strong>${esc(t.name)}</strong><small>${dayLabel(t.date)}${t.note?' · '+esc(t.note):''}</small></div><div class="earned ${t.type==='spent'?'negative':'positive'}">${t.type==='spent'?'−':'+'}${t.amount} ${t.wallet}</div></div>`}
+function renderDashboard(){
+document.getElementById('dashboardWallets').innerHTML=walletCard('PC')+walletCard('MC');
+document.getElementById('heroDone').textContent=state.completions.filter(c=>c.date===today()).length;
+document.getElementById('heroDoneSub').textContent=state.completions.some(c=>c.date===today())?'You showed up today!':'One step at a time';
+document.getElementById('heroStreak').textContent=streak()+' '+(streak()===1?'day':'days');
+document.getElementById('weekDone').textContent=state.completions.filter(c=>{let d=new Date(),s=new Date(d);s.setDate(d.getDate()-((d.getDay()+6)%7));s.setHours(0,0,0,0);return new Date(c.date+'T12:00:00')>=s}).length;
+document.getElementById('rewardCount').textContent=state.redemptions.length;
+document.getElementById('activeGoals').textContent=state.goals.filter(g=>g.active).length;
+const goals=state.goals.filter(g=>g.active).slice(0,4);
+document.getElementById('todayHabits').innerHTML=goals.length?goals.map(g=>`<div class="habit"><div class="habit-icon">${g.icon}</div><div class="habit-main"><strong>${esc(g.name)}</strong><small>${g.type} · ${completedToday(g.id)?'Completed today':'Your next small step'}</small></div><span class="reward-tag">+${g.coins} ${g.type}</span><button class="check-btn" data-complete="${g.id}" ${completedToday(g.id)?'disabled':''}>${completedToday(g.id)?'✓ Done':'Complete'}</button></div>`).join(''):'<div class="empty">Create your first goal to get started.</div>';
+const recent=[...state.transactions].sort((a,b)=>(b.date+a.id).localeCompare(a.date+b.id)).slice(0,5);
+document.getElementById('recentActivity').innerHTML=recent.length?recent.map(activityHTML).join(''):'<div class="empty">Your activity will appear here.</div>';
+}
+function renderGoals(){
+document.getElementById('goalList').innerHTML=state.goals.length?state.goals.map(g=>{const count=goalCountThisWeek(g.id),pct=Math.min(100,count/g.frequency*100);return `<div class="card" style="padding:15px"><div class="goal-card"><div class="habit-icon">${g.icon}</div><div class="goal-info"><strong>${esc(g.name)}</strong><p>${esc(g.description||'Keep building this habit, one step at a time.')}</p><div class="goal-meta"><span>${g.type} · ${g.coins} coins each time</span><span>${count}/${g.frequency} this week</span></div><div class="progress-track"><div class="progress-fill" style="width:${pct}%"></div></div><div style="display:flex;justify-content:space-between;gap:8px;align-items:center"><small style="color:var(--muted)">${completedToday(g.id)?'Completed today ✓':'Progress counts when you log a linked activity'}</small><button class="btn ghost small" data-complete="${g.id}" ${completedToday(g.id)?'disabled':''}>${completedToday(g.id)?'Done today':'Complete'}</button></div></div></div></div>`}).join(''):'<div class="empty">No goals yet. Create one to start building your routine.</div>';
+const select=document.getElementById('activityGoal');const old=select.value;select.innerHTML='<option value="">No goal selected</option>'+state.goals.filter(g=>g.active).map(g=>`<option value="${g.id}">${esc(g.name)} (${g.type})</option>`).join('');if([...select.options].some(o=>o.value===old))select.value=old;
+const todayItems=state.transactions.filter(t=>t.type==='earned'&&t.date===today());document.getElementById('todayActivityFull').innerHTML=todayItems.length?todayItems.map(activityHTML).join(''):'<div class="empty">No activities logged today yet.</div>';
+}
+function renderWallets(){
+document.getElementById('fullWallets').innerHTML=walletCard('PC')+walletCard('MC');
+const rows=[...state.transactions].sort((a,b)=>b.id-a.id).slice(0,30);
+document.getElementById('walletTransactions').innerHTML=rows.length?rows.map(t=>`<tr><td>${esc(t.name)}</td><td>${t.wallet}</td><td>${dayLabel(t.date)}</td><td class="${t.type==='spent'?'negative':'positive'}">${t.type==='spent'?'−':'+'}${t.amount}</td></tr>`).join(''):'<tr><td colspan="4">No transactions yet.</td></tr>';
+}
+function renderMarket(){
+document.getElementById('marketGrid').innerHTML=rewards.filter(r=>marketFilter==='all'||r.kind===marketFilter).map(r=>`<div class="card product"><div class="product-art"><span>${r.icon}</span><span class="product-type">${r.kind==='virtual'?'VIRTUAL':'REAL-WORLD IDEA'}</span></div><h3>${r.name}</h3><p>${r.desc}</p><div class="product-bottom"><span class="price">${r.cost} ${r.wallet}</span><button class="btn small" data-redeem="${r.id}" ${state.balances[r.wallet]<r.cost?'disabled style="opacity:.45;cursor:not-allowed"':''}>${state.balances[r.wallet]<r.cost?'Need more':'Redeem'}</button></div><small style="color:var(--muted)">Uses ${r.wallet==='PC'?'Physical':'Mind'} Coins</small></div>`).join('');
+}
+function renderHistory(){
+const all=[...state.transactions].map(t=>({...t})).sort((a,b)=>b.id-a.id);
+const rows=all.filter(t=>historyFilter==='all'||(historyFilter==='earned'?t.type==='earned':t.type==='spent'));
+document.getElementById('historyTable').innerHTML=rows.length?rows.map(t=>`<tr><td>${esc(t.name)}</td><td>${t.type==='spent'?'Reward redeemed':'Activity logged'}</td><td>${t.wallet}</td><td>${dayLabel(t.date)}</td><td class="${t.type==='spent'?'negative':'positive'}">${t.type==='spent'?'−':'+'}${t.amount}</td></tr>`).join(''):'<tr><td colspan="5">Nothing to show yet.</td></tr>';
+}
+function render(){renderDashboard();renderGoals();renderWallets();renderMarket();renderHistory();document.getElementById('avatar').textContent=(state.name||'G').trim().charAt(0).toUpperCase();document.getElementById('userName').value=state.name||''}
+function showView(name){document.querySelectorAll('.view').forEach(v=>v.classList.toggle('active',v.id==='view-'+name));document.querySelectorAll('.nav button[data-view]').forEach(b=>b.classList.toggle('active',b.dataset.view===name));const titles={dashboard:'Good morning 👋',habits:'Your habits, your pace',wallets:'Your wallets',marketplace:'Earned, not given',history:'Look how far you’ve come',settings:'Make it yours'};document.getElementById('pageTitle').textContent=state.name&&state.name!=='Goal Setter'&&name==='dashboard'?`Welcome back, ${state.name} 👋`:titles[name];document.getElementById('sidebar').classList.remove('open');if(name==='habits')renderGoals()}
+function openGoalModal(){document.getElementById('modalBackdrop').classList.add('open');document.getElementById('goalName').focus()}
+function closeGoalModal(){document.getElementById('modalBackdrop').classList.remove('open')}
+function completeGoal(id){const g=state.goals.find(g=>g.id===Number(id));if(!g)return;if(completedToday(g.id)){toast('You already completed this goal today.');return}state.balances[g.type]+=Number(g.coins);const tx={id:Date.now(),name:g.name,type:'earned',wallet:g.type,amount:Number(g.coins),date:today(),note:'Goal completed'};state.transactions.push(tx);state.completions.push({id:Date.now()+1,goalId:g.id,date:today(),transactionId:tx.id});save();render();toast(`Goal completed! +${g.coins} ${g.type} earned.`)}
+document.addEventListener('click',e=>{
+const nav=e.target.closest('[data-view]');if(nav){showView(nav.dataset.view);return}
+const go=e.target.closest('[data-go]');if(go){showView(go.dataset.go);return}
+const complete=e.target.closest('[data-complete]');if(complete){completeGoal(complete.dataset.complete);return}
+const redeem=e.target.closest('[data-redeem]');if(redeem){const r=rewards.find(x=>x.id===redeem.dataset.redeem);if(!r)return;if(state.balances[r.wallet]<r.cost){toast(`You need ${r.cost-state.balances[r.wallet]} more ${r.wallet}.`);return}if(r.kind==='physical'&&!confirm('This is a personal reward idea only; GoalCoin will not provide a product or service. Mark it as redeemed anyway?'))return;state.balances[r.wallet]-=r.cost;state.redemptions.push({id:Date.now(),rewardId:r.id,date:today()});state.transactions.push({id:Date.now(),name:r.name,type:'spent',wallet:r.wallet,amount:r.cost,date:today(),note:r.kind==='physical'?'Demo reward idea':'Virtual reward'});save();render();toast(`Redeemed: ${r.name}!`);return}
+const filter=e.target.closest('[data-filter]');if(filter){marketFilter=filter.dataset.filter;document.querySelectorAll('[data-filter]').forEach(b=>b.classList.toggle('active',b===filter));renderMarket();return}
+const hf=e.target.closest('[data-hfilter]');if(hf){historyFilter=hf.dataset.hfilter;document.querySelectorAll('[data-hfilter]').forEach(b=>b.classList.toggle('active',b===hf));renderHistory()}
+});
+document.getElementById('newGoalBtn').addEventListener('click',openGoalModal);document.getElementById('closeModal').addEventListener('click',closeGoalModal);document.getElementById('cancelGoal').addEventListener('click',closeGoalModal);document.getElementById('modalBackdrop').addEventListener('click',e=>{if(e.target.id==='modalBackdrop')closeGoalModal()});
+document.getElementById('goalForm').addEventListener('submit',e=>{e.preventDefault();const name=document.getElementById('goalName').value.trim();if(!name)return;state.goals.push({id:Date.now(),name,type:document.getElementById('goalType').value,frequency:Number(document.getElementById('goalFrequency').value),coins:Number(document.getElementById('goalCoins').value),icon:document.getElementById('goalIcon').value,description:document.getElementById('goalDescription').value.trim(),active:true});save();render();closeGoalModal();e.target.reset();toast('New goal created. You’ve got this!')});
+document.getElementById('activityForm').addEventListener('submit',e=>{e.preventDefault();const name=document.getElementById('activityName').value.trim(),wallet=document.getElementById('activityType').value,amount=Number(document.getElementById('activityCoins').value),goalId=Number(document.getElementById('activityGoal').value)||null,note=document.getElementById('activityNote').value.trim();if(!name||!Number.isFinite(amount)||amount<1||amount>500){toast('Enter an activity and a coin amount from 1 to 500.');return}const tx={id:Date.now(),name,type:'earned',wallet,amount,date:today(),note};state.balances[wallet]+=amount;state.transactions.push(tx);if(goalId&&!state.completions.some(c=>c.goalId===goalId&&c.date===today()))state.completions.push({id:Date.now()+1,goalId,date:today(),transactionId:tx.id});save();render();e.target.reset();document.getElementById('activityCoins').value=10;toast(`Activity saved. +${amount} ${wallet} added!`)});
+document.getElementById('quickAdd').addEventListener('click',()=>{showView('habits');document.getElementById('activityName').focus();document.getElementById('activityForm').scrollIntoView({behavior:'smooth',block:'center'})});
+document.getElementById('settingsForm').addEventListener('submit',e=>{e.preventDefault();state.name=document.getElementById('userName').value.trim()||'Goal Setter';save();render();showView('settings');toast('Settings saved.')});
+document.getElementById('resetBtn').addEventListener('click',()=>{if(confirm('Reset all GoalCoin demo data? This cannot be undone.')){state=seed();save();render();showView('dashboard');toast('Demo data reset.')}})
+document.getElementById('menuBtn').addEventListener('click',()=>document.getElementById('sidebar').classList.toggle('open'));
+document.getElementById('todayLabel').textContent=new Date().toLocaleDateString(undefined,{weekday:'long',month:'long',day:'numeric',year:'numeric'});
+render();
+</script>
+</body>
+</html>
